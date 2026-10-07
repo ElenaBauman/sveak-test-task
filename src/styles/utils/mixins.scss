@@ -1,0 +1,59 @@
+@import '../base/variables';
+
+@mixin mobile {
+  @media (max-width: ($tablet - 1)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $desktop-sm - 1) {
+    @content;
+  }
+}
+
+@mixin desktop-sm {
+  @media (max-width: $desktop - 1) {
+    @content;
+  }
+}
+
+@mixin transition($properties...) {
+  $transition-properties: ();
+
+  @each $property in $properties {
+    $transition-properties: append($transition-properties, #{$property} .2s cubic-bezier(0.4, 0.0, 0.2, 1), comma);
+  }
+
+  transition: $transition-properties;
+}
+
+@mixin trim-rows($item: '.card') {
+  @media (min-width: #{$mobile-vw}px) and (max-width: #{$tablet-vw - 1}px) {
+    #{$item}:nth-child(2n + 1):nth-last-child(-n + 1),
+    #{$item}:nth-child(2n + 1):nth-last-child(-n + 1) ~ #{$item} {
+      display: none !important;
+    }
+  }
+
+  @media (min-width: #{$tablet-vw}px) and (max-width: #{$desktop-sm-vw - 1}px) {
+    #{$item}:nth-child(3n + 1):nth-last-child(-n + 2),
+    #{$item}:nth-child(3n + 1):nth-last-child(-n + 2) ~ #{$item} {
+      display: none !important;
+    }
+  }
+
+  @media (min-width: #{$desktop-sm-vw}px) and (max-width: #{$desktop-vw - 1}px) {
+    #{$item}:nth-child(4n + 1):nth-last-child(-n + 3),
+    #{$item}:nth-child(4n + 1):nth-last-child(-n + 3) ~ #{$item} {
+      display: none !important;
+    }
+  }
+
+  @media (min-width: #{$desktop-vw}px) {
+    #{$item}:nth-child(5n + 1):nth-last-child(-n + 4),
+    #{$item}:nth-child(5n + 1):nth-last-child(-n + 4) ~ #{$item} {
+      display: none !important;
+    }
+  }
+}

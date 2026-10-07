@@ -1,0 +1,43 @@
+.footer {
+  grid-column: 1 / 3;
+  grid-row: 3;
+
+  @include tablet {
+    position: fixed;
+    bottom: 0;
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  @include mobile {
+    position: initial;
+  }
+
+  .footer__wrapper {
+    display: grid;
+    gap: d-vw(10);
+    padding: d-vw(17) d-vw(278) d-vw(17) d-vw(17);
+    border-top: d-vw(1) solid rgba($black, 0.2);
+    background: $purple;
+    color: $black;
+
+    @include desktop-sm {
+      gap: ds-vw(10);
+      padding: ds-vw(17);
+      border-top: ds-vw(1) solid rgba($black, 0.2);
+    }
+
+    @include tablet {
+      gap: t-vw(10);
+      padding: t-vw(15);
+      border-top: none;
+      background: $blue;
+    }
+
+    @include mobile {
+      gap: m-vw(10);
+      padding: m-vw(15);
+      background: $green;
+    }
+  }
+}

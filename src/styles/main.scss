@@ -1,0 +1,10 @@
+/* === Базовый слой === */
+@use 'sass:math';
+@import 'utils/module';
+@import 'base/module';
+
+/* === Проектный слой === */
+@import 'layout/module';
+
+/* === Компоненты === */
+@import 'components/module';

@@ -1,0 +1,15 @@
+@function m-vw($px) {
+  @return calc(($px * 100vw) / $mobile-vw);
+}
+
+@function t-vw($px) {
+  @return calc(($px * 100vw) / $tablet-vw);
+}
+
+@function ds-vw($px) {
+  @return calc(($px * 100vw) / $desktop-sm-vw);
+}
+
+@function d-vw($px) {
+  @return calc(($px * min(100vw, 1920px)) / $desktop-vw);
+}

@@ -1,0 +1,15 @@
+<header class="header">
+    <!-- FOR REVIEWER: в ТЗ указано сделать макет максимально без JS. Поэтому использован хак. Но как по мне лучше бы через JS тоглить классы -->
+    <input class="header__burger-input" type="checkbox" id="burger" hidden>
+    <label class="header__burger" for="burger" aria-label="Открыть меню">
+        {{icon "burger"}}
+    </label>
+    <div class="header__wrapper">
+        <a class="header__link" href="mailto:lenivtseva.lena@yandex.ru">
+            <img src="https://avatars.githubusercontent.com/u/108658314?v=4" alt="Елена Бауман">
+        </a>
+        <a class="header__link" href="https://vk.ru/4lapu_hvost" target="_blank" rel="noopener noreferrer">
+            {{icon "logo"}}
+        </a>
+    </div>
+</header>

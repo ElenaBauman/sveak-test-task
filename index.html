@@ -1,11 +1,49 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>sveak-test-task</title>
-  </head>
-  <body>
-  </body>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Каталог приюта «Четыре лапы и хвост»</title>
+    <link rel="stylesheet" href="/src/styles/main.scss">
+    <meta name="description"
+          content="Проект приюта «Четыре лапы и хвост». Можете посмотреть каталог наших питомцев и выбрать, кто станет вашим другом!">
+    <meta name="keywords"
+          content="Кошки, коты, котята, собаки, щенок, приют, бездомные животные, питомцы, четыре лапы и хвост, приютить, взять из приюта"/>
+    <meta property="og:title" content="Каталог кошек приюта «Четыре лапы и хвост»">
+    <meta property="og:description"
+          content="Проект приюта «Четыре лапы и хвост». Можете посмотреть каталог наших кошек и выбрать, кто станет вашим другом!">
+    <meta property="og:image"
+          content="https://sun9-82.vkuserphoto.ru/s/v1/ig1/_5MmllA0A1SHbKduFvatPrEZTcJGt-gV1wzsh67iEZ4zjb2mp6KlW5g-YUxTHiTTBl5WoJfN.jpg?quality=96&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480&from=bu&cs=480x0">
+    <meta property="og:url" content="https://vk.ru/4lapu_hvost">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Четыре лапы и хвост">
+    <meta name="robots" content="index, follow">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "AnimalShelter",
+            "name": "Четыре лапы и хвост",
+            "url": "https://vk.ru/4lapu_hvost",
+            "description": "Приют для бездомных кошек. Помогаем найти дом и заботливых хозяев.",
+            "image": "https://sun9-82.vkuserphoto.ru/s/v1/ig1/_5MmllA0A1SHbKduFvatPrEZTcJGt-gV1wzsh67iEZ4zjb2mp6KlW5g-YUxTHiTTBl5WoJfN.jpg?quality=96&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480&from=bu&cs=480x0",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Канск",
+                "addressCountry": "RU"
+            },
+            "sameAs": [
+                "https://vk.ru/4lapu_hvost"
+            ]
+        }
+    </script>
+</head>
+<body>
+{{> header }}
+{{> navigation }}
+<main>
+    {{> content }}
+</main>
+{{> footer }}
+</body>
 </html>
