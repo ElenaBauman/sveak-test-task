@@ -40,10 +40,17 @@
 </head>
 <body>
 {{> header }}
-{{> navigation }}
+<nav class="navigation">
+    <label for="burger" class="navigation__close">
+        {{icon "close"}}
+    </label>
+    <ul class="navigation__list"></ul>
+</nav>
 <main>
-    {{> content }}
+    <section class="content"></section>
 </main>
 {{> footer }}
+{{> petModal }}
+<script type="module" src="/src/script/main.ts"></script>
 </body>
 </html>

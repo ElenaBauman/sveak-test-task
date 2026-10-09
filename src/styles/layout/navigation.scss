@@ -18,6 +18,8 @@ body:has(.header__burger-input:checked) {
   border-right: d-vw(1) solid rgba($black, 0.2);
   overflow: hidden;
   background: rgba($purple, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 
   @include transition(left, background, opacity);
 
@@ -36,13 +38,14 @@ body:has(.header__burger-input:checked) {
     height: 100dvh;
     padding: t-vw(40) t-vw(25) t-vw(25);
     border: none;
-    background: $purple;
+    background: rgba($blue, 0.8);
   }
 
   @include mobile {
     left: m-vw(-500);
     width: 100dvw;
     padding: m-vw(40) m-vw(25) m-vw(25);
+    background: rgba($green, 0.8);
   }
 
   .navigation__close {
@@ -110,15 +113,16 @@ body:has(.header__burger-input:checked) {
     grid-template-columns: d-vw(31) auto;
     gap: d-vw(10);
     align-items: center;
+    min-height: d-vw(30);
     padding: d-vw(12);
     border-radius: d-vw(30);
-    background: transparent;
+    background-color: transparent;
     cursor: pointer;
 
-    @include transition(background);
+    @include transition(background-color);
 
     &:hover {
-      background: $violet;
+      background-color: $violet;
 
       .navigation__link {
         color: $white;
@@ -128,6 +132,7 @@ body:has(.header__burger-input:checked) {
     @include desktop-sm {
       grid-template-columns: ds-vw(28) auto;
       gap: ds-vw(10);
+      min-height: ds-vw(30);
       padding: ds-vw(12);
       border-radius: ds-vw(30);
     }
@@ -135,11 +140,12 @@ body:has(.header__burger-input:checked) {
     @include tablet {
       grid-template-columns: t-vw(28) auto;
       gap: t-vw(7);
+      min-height: t-vw(30);
       padding: 0;
       border-radius: 0;
 
       &:hover {
-        background: inherit;
+        background-color: inherit;
 
         .navigation__link {
           color: inherit;
@@ -150,6 +156,31 @@ body:has(.header__burger-input:checked) {
     @include mobile {
       grid-template-columns: m-vw(24) auto;
       gap: m-vw(7);
+      min-height: m-vw(30);
+    }
+  }
+
+  .navigation__item_active {
+    background-color: $violet;
+
+    .navigation__link {
+      color: $white;
+    }
+  }
+
+  .navigation__item.skeleton:not(:last-of-type) {
+    margin-bottom: d-vw(12);
+
+    @include desktop-sm {
+      margin-bottom: ds-vw(12);
+    }
+
+    @include tablet {
+      margin-bottom: t-vw(10);
+    }
+
+    @include mobile {
+      margin-bottom: m-vw(7);
     }
   }
 

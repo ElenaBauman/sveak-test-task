@@ -8,7 +8,9 @@
   width: 100%;
   height: var(--header-height);
   padding-inline: d-vw(20);
-  background: $purple;
+  background: rgba($purple, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 
   @include desktop-sm {
     padding-inline: ds-vw(20);
@@ -20,12 +22,12 @@
     grid-row: 1;
     z-index: $headerPosition;
     padding-inline: t-vw(15);
-    background: $blue;
+    background: rgba($blue, 0.3);
   }
 
   @include mobile {
     padding-inline: m-vw(15);
-    background: $green;
+    background: rgba($green, 0.3);
   }
 
   .header__wrapper {

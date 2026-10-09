@@ -1,3 +1,37 @@
+.headline-1 {
+  font-weight: 700;
+  font-size: d-vw(16);
+
+  @include desktop-sm {
+    font-size: ds-vw(16);
+  }
+
+  @include tablet {
+    font-size: t-vw(14);
+  }
+
+  @include mobile {
+    font-size: m-vw(12);
+  }
+}
+
+.headline-2 {
+  font-weight: 700;
+  font-size: d-vw(18);
+
+  @include desktop-sm {
+    font-size: ds-vw(18);
+  }
+
+  @include tablet {
+    font-size: t-vw(16);
+  }
+
+  @include mobile {
+    font-size: m-vw(16);
+  }
+}
+
 .subtitle {
   font-weight: 700;
   font-size: d-vw(14);
@@ -50,6 +84,23 @@
 
 .body-3 {
   font-weight: 500;
+  font-size: d-vw(14);
+
+  @include desktop-sm {
+    font-size: ds-vw(12);
+  }
+
+  @include tablet {
+    font-size: t-vw(10);
+  }
+
+  @include mobile {
+    font-size: m-vw(10);
+  }
+}
+
+.body-4 {
+  font-weight: 700;
   font-size: d-vw(14);
 
   @include desktop-sm {

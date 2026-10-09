@@ -1,82 +1,83 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-    line-height: 1;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizelegibility;
-    --header-height: #{d-vw(60)};
-    --footer-height: #{d-vw(90)};
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  --header-height: #{d-vw(60)};
+  --footer-height: #{d-vw(90)};
 
-    @include desktop-sm {
-        --header-height: #{ds-vw(50)};
-        --footer-height: #{ds-vw(90)};
-    }
+  @include desktop-sm {
+    --header-height: #{ds-vw(50)};
+    --footer-height: #{ds-vw(90)};
+  }
 
-    @include tablet {
-        --header-height: #{t-vw(40)};
-        --footer-height: #{t-vw(80)};
-    }
+  @include tablet {
+    --header-height: #{t-vw(40)};
+    --footer-height: #{t-vw(80)};
+  }
 
-    @include mobile {
-        --header-height: #{m-vw(40)};
-        --footer-height: #{m-vw(50)};
-    }
+  @include mobile {
+    --header-height: #{m-vw(40)};
+    --footer-height: #{m-vw(50)};
+  }
 }
 
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr auto;
-    width: 100vw;
-    height: 100dvh;
-    overflow: hidden;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  background: url("/src/images/background.webp") center / cover no-repeat;
 
-    @include tablet {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr auto;
-        height: auto;
-        min-height: 100dvh;
-        overflow-x: hidden;
-        overflow-y: visible;
-    }
+  @include tablet {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: auto;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: visible;
+    background: url("/src/images/background.webp") center / cover repeat;
+  }
 }
 
 main {
-    grid-column: 2;
+  grid-column: 2;
+  grid-row: 2;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-color: rgba($black, 0.25) rgba($violet, 0.25);
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba($black, 0.25);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba($black, 0.4);
+  }
+
+  @include tablet {
+    grid-column: 1;
     grid-row: 2;
-    min-height: 0;
-    overflow-y: auto;
-    scrollbar-color: rgba($black, 0.25) rgba($violet, 0.25);
-    background: $grey;
+    padding-block: var(--header-height) var(--footer-height);
+    overflow: visible;
+  }
 
-    &::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: rgba($black, 0.25);
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-        background: rgba($black, 0.4);
-    }
-
-    @include tablet {
-        grid-column: 1;
-        grid-row: 2;
-        padding-block: var(--header-height) var(--footer-height);
-        overflow: visible;
-    }
-
-    @include mobile {
-        padding-block: var(--header-height) 0;
-    }
+  @include mobile {
+    padding-block: var(--header-height) 0;
+  }
 }
