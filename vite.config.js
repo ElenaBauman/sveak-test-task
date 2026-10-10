@@ -12,6 +12,8 @@ const icon = (name) => {
 };
 
 export default defineConfig({
+    base: '/sveak-test-task/',
+
     css: {
         preprocessorOptions: {
             scss: {
