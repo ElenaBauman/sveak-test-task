@@ -16,8 +16,8 @@ https://elenabauman.github.io/sveak-test-task/
 ## Запуск
 
 ```bash
-yarn build
-yarn preview
+yarn install
+yarn dev
 ```
 
 ## Важно
